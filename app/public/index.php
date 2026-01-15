@@ -1,39 +1,59 @@
-<?php include("../vistas/cabezera.php"); ?>
+<!DOCTYPE html>
+<html lang="es">
 
-<main style="padding: 20px;">
+<head>
+  <meta charset="UTF-8">
+  <title>Agencia de Viajes</title>
+</head>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 200px);
+    gap: 16px;
+    justify-content: center;
+  }
+
+  .grid img {
+    width: 200px;
+  }
+</style>
+
+<body style="background-color: #e2ecff">
+
+  <?php include("../vistas/cabezera.php"); ?>
+
+  <img style="display:flex; width: 100%; height: fit-content;" src="../assets/index_background.jpg" alt="background">
+
+  <main style="padding: 20px;">
     <h1>Bienvenido a nuestra agencia</h1>
     <p>Descubre los mejores destinos al mejor precio.</p>
-</main>
+    <section>
+      <?php
+      $servername = "localhost";
+      $username = "root";
+      $password = "";
+      $database = "viajes";
 
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "viajes";
+      // Create connection
+      include("../vistas/conexion_bd.php");
 
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $database);
+      $sql = "SELECT * FROM viajes";
+      $result = $conn->query($sql);
 
-// Check connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-echo "Connected successfully<br><br>";
+      if ($result->num_rows > 0) {
+        // output data of each row
+        while ($row = $result->fetch_assoc()) {
+          echo $row["titulo"];
+          echo ("<br><br>");
+        }
+      }
 
-$sql = "SELECT * FROM viajes";
-$result = $conn->query($sql);
+      $conn->close();
 
-if ($result->num_rows > 0) {
-  // output data of each row
-  while($row = $result->fetch_assoc()) {
-    echo $row["titulo"];
-  }
-} else {
-  echo "0 results";
-}
-$conn->close();
-
-?>
+      ?>
+    </section>
+  </main>
 
 </body>
 

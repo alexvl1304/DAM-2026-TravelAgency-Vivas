@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Agencia de Viajes</title>
+</head>
+
+<body>
+
+
 <?php include("../vistas/cabezera.php"); ?>
 
 <main style="padding: 20px;">
