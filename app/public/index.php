@@ -9,32 +9,34 @@
 <style>
   .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 200px);
+    grid-template-columns: repeat(auto-fill, minmax(550px, 1fr));
     gap: 16px;
-    justify-content: center;
   }
 
-  .grid img {
-    width: 200px;
+  .card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    background: #fff;
+  }
+
+  .card img {
+    width: 100%;
+    height: auto;
   }
 </style>
 
 <body style="background-color: #e2ecff">
-
-  <?php include("../vistas/cabezera.php"); ?>
+  <header>
+    <?php include("../vistas/cabezera.php"); ?>
+  </header>
 
   <img style="display:flex; width: 100%; height: fit-content;" src="../assets/index_background.jpg" alt="background">
 
   <main style="padding: 20px;">
     <h1>Bienvenido a nuestra agencia</h1>
     <p>Descubre los mejores destinos al mejor precio.</p>
-    <section>
+    <section class="grid">
       <?php
-      $servername = "localhost";
-      $username = "root";
-      $password = "";
-      $database = "viajes";
-
       // Create connection
       include("../vistas/conexion_bd.php");
 
@@ -44,8 +46,11 @@
       if ($result->num_rows > 0) {
         // output data of each row
         while ($row = $result->fetch_assoc()) {
-          echo $row["titulo"];
-          echo ("<br><br>");
+          echo (
+            "<div class='card'> 
+            <h3>" . $row['titulo'] . "</h3> 
+            <img src='" . $row['url_imagen'] . "' alt=''>
+          </div>");
         }
       }
 
