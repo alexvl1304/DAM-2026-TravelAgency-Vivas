@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Agencia de Viajes</title>
+  <title>Error 404</title>
 </head>
 
 <body>
@@ -12,8 +12,8 @@
 <?php include("../vistas/cabezera.php"); ?>
 
 <main style="padding: 20px;">
-    <h1>Nuestros Viajes</h1>
-    <p class="blue-color">.</p>
+    <h1>Error 404</h1>
+    <p class="blue-color">¡No existe el viaje seleccionado!</p>
 </main>
 
 </body>

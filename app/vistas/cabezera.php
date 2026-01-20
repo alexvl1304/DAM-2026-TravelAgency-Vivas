@@ -1,7 +1,15 @@
 <style>
+    html,
     body {
+        height: 100%;
         margin: 0;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
         font-family: Arial, Helvetica, sans-serif;
+        background-color: #e2ecff;
     }
 
     .barra {
@@ -31,7 +39,34 @@
         margin-left: auto;
         padding-right: 30px;
     }
+
+    h1 {
+        text-align: center;
+        font-size: 45px;
+        color: #02203a;
+        font-weight: bold
+    }
+
+    .blue-color {
+        text-align: center;
+        font-size: 20px;
+        color: #02203a;
+        font-weight: bold
+    }
+
+    main {
+        flex: 1;
+        /* Ocupa el espacio disponible */
+    }
+
+    footer {
+        background: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+    }
 </style>
+
 <nav class="cabezera">
     <img style="display:flex; max-width: 350px; height: auto" src="../assets/logo.png" alt="logo">
     <div class="info">
