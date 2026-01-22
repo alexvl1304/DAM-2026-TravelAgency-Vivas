@@ -46,6 +46,7 @@
   .card {
     border: 2px solid #ccc;
     background: #f4f7ff;
+    max-height: 420px;
   }
 
   .card img {
@@ -100,7 +101,7 @@
       // create connection
       include("../vistas/conexion_bd.php");
 
-      $sql = "SELECT * FROM viajes";
+      $sql = "SELECT * FROM viajes WHERE destacado = 1";
       $result = $conn->query($sql);
 
       if ($result->num_rows > 0) {
@@ -135,6 +136,8 @@
       ?>
     </section>
   </main>
+  
+  <?php include("../vistas/footer.php"); ?>
 
 </body>
 

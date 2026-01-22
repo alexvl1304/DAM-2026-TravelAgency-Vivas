@@ -16,5 +16,7 @@
     <p class="blue-color">¡No existe el viaje seleccionado!</p>
 </main>
 
+<?php include("../vistas/footer.php"); ?>
+
 </body>
 </html>
