@@ -38,7 +38,8 @@ $conn->close();
         Tipo: <input type="text" name="tipo" value="<?php echo $viaje["tipo"] ?>"><br>
         Descripcion: <textarea name="descripcion" rows="12" cols="30"><?php echo $viaje["descripcion"] ?></textarea><br>
         Imagen: <input type="text" name="url_imagen" value="<?php echo $viaje["url_imagen"] ?>"><br>
-        Destacado: <input type="checkbox" name="destacado" value="<?php echo $viaje["destacado"] ?>" <?php
+        <input type="hidden" name="destacado" value="0">
+        Destacado: <input type="checkbox" name="destacado" value="1" <?php
            if ($viaje["destacado"])
                echo "checked";
            ?>><br>

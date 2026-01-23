@@ -6,11 +6,16 @@
   <title>Agencia de Viajes</title>
   <style>
     td {
-      padding: 10px;
+      padding-inline: 5px;
+      padding: 5px
     }
 
-    a {
+    .boton-accion {
+      display: inline-block;
+      padding: 10px 20px;
+      color: white;
       text-decoration: none;
+      border-radius: 8px;
     }
   </style>
 </head>
@@ -22,6 +27,7 @@
   <main style="padding: 20px;">
     <h1>Nuestros Viajes</h1>
     <p class="blue-color"></p>
+
     <section>
       <table style="width: 100%" border="1" cellspacing="0">
         <tr style="font-weight: bold; font-size: 18px;  background: #d2d6e2;">
@@ -52,9 +58,14 @@
                 <?php
               }
               ?>
-              <td style="display: flex;">
-                <a style="padding-right:10px;" href="modificar-viaje.php?id= <?php echo $row["id"] ?>">Modificar</a>
-                <a style="padding-left:10px;" href="">Eliminar</a>
+              <td style="display: flex; gap:5px;">
+                <a class="boton-accion" style="background-color: #246097;"
+                  href="modificar-viaje.php?id= <?php echo $row["id"] ?>">Modificar</a>
+                <a class="boton-accion" style="background-color: #852623;"
+                  href="../vistas/procesar_eliminar_viaje.php?id=<?php echo $row["id"] ?>"
+                  onclick="return confirm('Confirmar eliminar')">
+                  Eliminar
+                </a>
               </td>
             </tr>
             <?php

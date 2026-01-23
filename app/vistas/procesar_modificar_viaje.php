@@ -32,6 +32,8 @@ if($stmt->affected_rows > 0){
 } else {
     echo "Hubo un error al actualizar (no se actualizo)";
 }
+
+$conn->close();
 ?>
 
 </body>
