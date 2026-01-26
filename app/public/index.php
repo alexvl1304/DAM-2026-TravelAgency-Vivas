@@ -13,7 +13,7 @@
   }
 
   .intro-div {
-    border: 2px solid #ccc;
+    border: 2px solid #b1b1b1;
     border-radius: 8px;
     padding: 20px;
     background: #f4f7ff;
@@ -44,7 +44,8 @@
   }
 
   .card {
-    border: 2px solid #ccc;
+    border: 2px solid #b1b1b1;
+    border-radius: 8px;
     background: #f4f7ff;
     max-height: 420px;
   }
@@ -54,17 +55,6 @@
     height: 250px;
     object-fit: cover;
   }
-
-  .card-info {
-    padding: 5px;
-  }
-
-  .detalles-card {
-    background: #c0e7b6;
-    display: flex;
-    justify-content: center;
-  }
-
 </style>
 
 <body>
@@ -105,19 +95,22 @@
           ?>
           <a href='detalles.php?id= <?php echo $row["id"] ?> '>
             <div class='card'>
-              <div class='card-info'>
-                <h3 style='text-align: center; font-size: 25px;'>
-                  <?php echo $row['titulo'] ?>
-                </h3>
-                <p style='text-align: center; font-size: 20px;'>
+              <h3 style='text-align: center; font-size: 25px;'>
+                <?php echo $row['titulo'] ?>
+              </h3>
+
+              <img src=' <?php echo $row['url_imagen'] ?> ' alt='destino'>
+
+              <div style="display: flex; padding: 0px 10px;">
+                <p style="flex:1; text-align:left; font-size:20px;">
+                  <?php echo $row['fecha_inicio'] ?>
+                </p>
+                <p style="flex:1; text-align:center; font-size:20px;">
                   <?php echo $row['precio'] . "€" ?>
                 </p>
-              </div>
-              <img src=' <?php echo $row['url_imagen'] ?> ' alt='destino'>
-              <div class="detalles-card">
-                <div style='text-align: center; font-size: 20px; padding: 5px;'>
-                  Detalles
-                </div>
+                <p style="flex:1; text-align:right; font-size:20px;">
+                  <?php echo $row['tipo'] ?>
+                </p>
               </div>
             </div>
           </a>
@@ -130,7 +123,7 @@
       ?>
     </section>
   </main>
-  
+
   <?php include("../vistas/footer.php"); ?>
 
 </body>
