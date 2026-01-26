@@ -65,12 +65,6 @@
     justify-content: center;
   }
 
-  /* .reservar-card {
-    border: 2px solid #69584a;
-    border-radius: 8px;
-    background: #d8ac88;
-    max-width: 200px;
-  } */
 </style>
 
 <body>

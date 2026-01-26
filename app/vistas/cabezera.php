@@ -56,7 +56,6 @@
 
     main {
         flex: 1;
-        /* Ocupa el espacio disponible */
     }
 
     footer {

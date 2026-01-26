@@ -10,12 +10,33 @@
       padding: 5px
     }
 
+    .anadir-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      display: flex;
+    }
+
     .boton-accion {
       display: inline-block;
       padding: 10px 20px;
       color: white;
       text-decoration: none;
       border-radius: 8px;
+    }
+
+    .boton-anadir {
+      object-fit: cover;
+      max-width: 50%;
+      display: block;
+      margin: 0 auto;
+      background-color: #147a25;
+      padding: 10px 20px;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 20px;
     }
   </style>
 </head>
@@ -25,8 +46,11 @@
   <?php include("../vistas/cabezera.php"); ?>
 
   <main style="padding: 20px;">
-    <h1>Nuestros Viajes</h1>
-    <p class="blue-color"></p>
+    <h1>Viajes</h1>
+
+    <section class="anadir-button">
+      <a class="boton-anadir" style="" href="modificar-viaje.php?id= <?php echo $row["id"] ?>">Añadir viaje</a>
+    </section>
 
     <section>
       <table style="width: 100%" border="1" cellspacing="0">
