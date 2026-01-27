@@ -57,7 +57,7 @@
         <h1>Iniciar sesión</h1>
 
         <p class="blue-color">Introduce tu nombre de usuario y contraseña:</p>
-        <form action="../vistas/procesar_anadir_viaje.php" method="POST">
+        <form action="../vistas/procesar_iniciar_sesion.php" method="POST">
             Usuario: <input class="textinput" type="text" name="user" value=""><br>
             Contraseña: <input class="textinput" type="text" name="pass" value=""><br>
             <input class="boton-anadir" type="submit" value="Iniciar sesión">

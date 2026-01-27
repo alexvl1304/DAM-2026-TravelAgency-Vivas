@@ -57,7 +57,7 @@
         <h1>Crear cuenta</h1>
 
         <p class="blue-color">Disfruta de todas las oportunidades de Easy Peasy Travel:</p>
-        <form action="../vistas/procesar_anadir_viaje.php" method="POST">
+        <form action="../vistas/procesar_crear_cuenta.php" method="POST">
             Email: <input class="textinput" type="email" name="email" value=""><br>
             Usuario: <input class="textinput" type="text" name="user" value=""><br>
             Contraseña: <input class="textinput" type="text" name="pass" value=""><br>

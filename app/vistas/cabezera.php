@@ -77,8 +77,14 @@
         </p>
     </div>
 </nav>
-<nav class="barra">
-    <a class="pestana" href="../public/index.php">Home</a>
-    <a class="pestana" href="../public/viajes.php">Viajes</a>
-    <a class="pestana" href="../public/login.php">Iniciar sesión</a>
+<nav style="display: flex;">
+    <div style="justify-content: start;" class="barra">
+        <a class="pestana" href="../public/index.php">Home</a>
+        <a class="pestana" href="../public/viajes.php">Viajes</a>
+        <a class="pestana" href="../public/login.php">Iniciar sesión</a>
+    </div>
+    <div style="justify-content: end;" class="barra">
+        <a class="pestana" href="../public/index.php">Home</a>
+        <a class="pestana" href="../public/viajes.php">Viajes</a>
+    </div>
 </nav>
