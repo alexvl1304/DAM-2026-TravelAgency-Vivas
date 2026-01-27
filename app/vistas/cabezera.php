@@ -26,7 +26,7 @@
         align-items: center;
         font-size: 20px;
         font-weight: bold;
-        color: #01294B
+        color: #01294B;
     }
 
     .pestana {
@@ -44,14 +44,14 @@
         text-align: center;
         font-size: 45px;
         color: #02203a;
-        font-weight: bold
+        font-weight: bold;
     }
 
     .blue-color {
         text-align: center;
         font-size: 20px;
         color: #02203a;
-        font-weight: bold
+        font-weight: bold;
     }
 
     main {
@@ -67,7 +67,7 @@
 </style>
 
 <nav class="cabezera">
-    <img style="display:flex; max-width: 350px; height: auto" src="../assets/logo.png" alt="logo">
+    <img style="display:flex; max-width: 350px; height: auto" src="../assets/imagenes-pagina/logo.png" alt="logo">
     <div class="info">
         <p>
             contact@easypeasytravel.com
@@ -80,4 +80,5 @@
 <nav class="barra">
     <a class="pestana" href="../public/index.php">Home</a>
     <a class="pestana" href="../public/viajes.php">Viajes</a>
+    <a class="pestana" href="../public/login.php">Iniciar sesión</a>
 </nav>

@@ -5,9 +5,15 @@
   <meta charset="UTF-8">
   <title>Agencia de Viajes</title>
   <style>
+    table {
+      max-width: 1250px;
+      min-width: 900px;
+      margin: 10px auto;
+    }
+
     td {
       padding-inline: 5px;
-      padding: 5px
+      padding: 5px;
     }
 
     .anadir-button {
@@ -49,13 +55,14 @@
     <h1>Viajes</h1>
 
     <section class="anadir-button">
-      <a class="boton-anadir" style="" href="modificar-viaje.php?id= <?php echo $row["id"] ?>">Añadir viaje</a>
+      <a class="boton-anadir" style="" href="anadir-viaje.php">Añadir viaje</a>
     </section>
 
     <section>
       <table style="width: 100%" border="1" cellspacing="0">
         <tr style="font-weight: bold; font-size: 18px;  background: #d2d6e2;">
           <td>ID</td>
+          <td>★</td>
           <td>Titulo</td>
           <td>Precio</td>
           <td>Fecha de inicio</td>
@@ -66,7 +73,7 @@
         // create connection
         include("../vistas/conexion_bd.php");
 
-        $sql = "SELECT id, titulo, precio, fecha_inicio, fecha_fin FROM viajes";
+        $sql = "SELECT id, destacado, titulo, precio, fecha_inicio, fecha_fin FROM viajes";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
@@ -77,9 +84,21 @@
             <tr>
               <?php
               foreach ($row as $key => $value) {
-                ?>
-                <td> <?php echo $value ?> </td>
-                <?php
+                if ($key == "destacado") {
+                  if ($value == 1) {
+                    ?>
+                    <td style=" color: #d4a017">★</td>
+                    <?php
+                  } else {
+                    ?>
+                    <td style="color: #852623">X</td>
+                    <?php
+                  }
+                } else {
+                  ?>
+                  <td> <?php echo $value ?> </td>
+                  <?php
+                }
               }
               ?>
               <td style="display: flex; gap:5px;">
