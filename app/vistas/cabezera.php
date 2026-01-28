@@ -1,70 +1,8 @@
-<style>
-    html,
-    body {
-        height: 100%;
-        margin: 0;
-    }
-
-    body {
-        display: flex;
-        flex-direction: column;
-        font-family: Arial, Helvetica, sans-serif;
-        background-color: #e2ecff;
-    }
-
-    .barra {
-        display: flex;
-        gap: 20px;
-        background-color: #294b7e;
-        padding: 15px 30px;
-        font-size: 20px;
-    }
-
-    .cabezera {
-        display: flex;
-        gap: 20px;
-        align-items: center;
-        font-size: 20px;
-        font-weight: bold;
-        color: #01294B;
-    }
-
-    .pestana {
-        color: white;
-        text-decoration: none;
-        font-weight: bold;
-    }
-
-    .info {
-        margin-left: auto;
-        padding-right: 30px;
-    }
-
-    h1 {
-        text-align: center;
-        font-size: 45px;
-        color: #02203a;
-        font-weight: bold;
-    }
-
-    .blue-color {
-        text-align: center;
-        font-size: 20px;
-        color: #02203a;
-        font-weight: bold;
-    }
-
-    main {
-        flex: 1;
-    }
-
-    footer {
-        background: #333;
-        color: #fff;
-        text-align: center;
-        padding: 10px;
-    }
-</style>
+<?php
+if(!isset($_SESSION)){
+    session_start();
+}
+?>
 
 <nav class="cabezera">
     <img style="display:flex; max-width: 350px; height: auto" src="../assets/imagenes-pagina/logo.png" alt="logo">
@@ -78,13 +16,32 @@
     </div>
 </nav>
 <nav style="display: flex;">
-    <div style="justify-content: start;" class="barra">
+    <div style="flex: 1; justify-content: start;" class="barra">
         <a class="pestana" href="../public/index.php">Home</a>
-        <a class="pestana" href="../public/viajes.php">Viajes</a>
-        <a class="pestana" href="../public/login.php">Iniciar sesión</a>
+        <a class="pestana" href="../public/todos-viajes.php">Viajes</a>
+        <?php
+        if (isset($_SESSION["user"]) && $_SESSION["user"]["admin"] == 1) {
+            ?>
+            <a class="pestana" href="../public/viajes.php">Base de datos</a>
+            <?php
+        }
+        ?>
     </div>
-    <div style="justify-content: end;" class="barra">
-        <a class="pestana" href="../public/index.php">Home</a>
-        <a class="pestana" href="../public/viajes.php">Viajes</a>
-    </div>
+    <?php
+    if (isset($_SESSION["user"])) {
+        ?>
+        <div style="flex: 1; justify-content: end;" class="user">
+            <a style="display: flex;" href="../public/pagina-usuario.php">
+                <img style="max-height: 60px; flex: 1" src="../assets/imagenes-pagina/user.png" alt="">
+            </a>
+        </div>
+        <?php
+    } else {
+        ?>
+        <div style="flex: 1; justify-content: end;" class="barra">
+            <a class="pestana" href="../public/login.php">Iniciar sesión</a>
+        </div>
+        <?php
+    }
+    ?>
 </nav>

@@ -30,68 +30,10 @@ $conn->close();
         echo $viaje["titulo"];
         ?>
     </title>
-
-    <style>
-        .detalle-container {
-            max-width: 1000px;
-            margin: 30px auto;
-            background: #f4f7ff;
-            border: 2px solid #9e9e9e;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        .detalle-img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .detalle-body {
-            padding: 25px;
-        }
-
-        .detalle-titulo {
-            font-size: 32px;
-            color: #222;
-            margin-bottom: 10px;
-            text-align: center;
-        }
-
-        .detalle-precio {
-            font-size: 30px;
-            color: #147a25;
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .detalle-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            font-size: 18px;
-            color: #444;
-            margin-bottom: 25px;
-        }
-
-        .detalle-descripcion {
-            font-size: 18px;
-            color: #333;
-            line-height: 1.6;
-            margin-bottom: 25px;
-        }
-
-        .destacado {
-            color: #d4a017;
-            font-size: 20px;
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-    </style>
-
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/cabecera.css">
+    <link rel="stylesheet" href="../assets/css/detalles-viaje.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
 </head>
 
 <body>
@@ -102,7 +44,8 @@ $conn->close();
 
         <div class="detalle-container">
 
-            <img class="detalle-img" src="<?php echo $viaje["url_imagen"] ?>" alt="Imagen del viaje">
+            <img class="detalle-img" src="../assets/imagenes-viajes/<?php echo $viaje["url_imagen"] ?>"
+                alt="Imagen del viaje">
 
             <div class="detalle-body">
 

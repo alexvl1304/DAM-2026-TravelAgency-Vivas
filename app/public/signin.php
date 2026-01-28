@@ -4,49 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Crear cuenta</title>
-
-    <style>
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            width: 400px;
-            padding: 20px;
-            border: 2px solid #9e9e9e;
-            border-radius: 8px;
-            background-color: #f9f9f9;
-            margin: 10px auto;
-        }
-
-        .boton-anadir {
-            padding: 10px;
-            font-size: 16px;
-            cursor: pointer;
-            background-color: #246097;
-            color: white;
-            border: none;
-            border-radius: 5px;
-        }
-
-        .boton-volver {
-            padding: 10px;
-            font-size: 20px;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            margin: 10px;
-            display: flex;
-            justify-content: center;
-            color: #02203a;
-            font-weight: bold;
-        }
-
-        .textinput {
-            height: 25px;
-            font-size: 16px;
-        }
-    </style>
-
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/cabecera.css">
+    <link rel="stylesheet" href="../assets/css/form-user.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
 </head>
 
 <body>
@@ -64,8 +25,8 @@
             <div style="font-size: 18px; font-weight: bold; margin: 0px 0px 10px">
                 Datos bancarios:
             </div>
-            Tarjeta de crédito: <input class="textinput" type="card" name="pass" value=""><br>
-            Número secreto: <input class="textinput" type="cardnum" name="pass" value=""><br>
+            Tarjeta de crédito: <input class="textinput" type="text" name="card" value=""><br>
+            Número secreto: <input class="textinput" type="number" name="cardnum" value=""><br>
             <input class="boton-anadir" type="submit" value="Crear cuenta">
         </form>
 

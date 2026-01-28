@@ -10,37 +10,103 @@
   <link rel="stylesheet" href="../assets/css/footer.css">
 </head>
 
+<style>
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .intro-div {
+    border: 2px solid #9e9e9e;
+    border-radius: 8px;
+    padding: 20px;
+    background: #f4f7ff;
+    object-fit: cover;
+    max-width: 700px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .intro-section {
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .intro-div img {
+    object-fit: cover;
+    max-width: 50%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 15px;
+    padding: 0px 100px;
+  }
+
+  .card {
+    border: 2px solid #9e9e9e;
+    border-radius: 8px;
+    background: #f4f7ff;
+    max-height: 350px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card:hover {
+    background-color: #e0e5f1;
+  }
+
+  .card img {
+    width: 100%;
+    height: 175px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .card-titulo {
+    margin: 15px 0px 5px;
+    color: #222222;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .card-info {
+    flex: 1;
+    font-size: 18px;
+    color: #505050;
+    margin: 5px 0 10px;
+    margin-top: auto;
+  }
+
+  .card-precio {
+    flex: 1;
+    font-size: 25px;
+    color: #147a25;
+    margin: 5px 0 10px;
+    font-weight: bold;
+  }
+</style>
 
 <body>
   <header>
     <?php include("../vistas/cabezera.php"); ?>
   </header>
 
-  <img style="display:flex; width: 100%; height: fit-content;" src="../assets/imagenes-pagina/index_background_4.jpg"
-    alt="background">
-
   <main style="padding: 20px;">
-    <h1>Bienvenido a Easy Peasy Travel</h1>
-    <p class="blue-color">¡Aquí descubrirás los mejores destinos al mejor precio!</p>
-    <section class="intro-section">
-
-      <div class="intro-div">
-        <p style='text-align: center; font-size: 20px;'>
-          En Easy Peasy Travel hacemos que viajar sea fácil, rápido y memorable. Diseñamos experiencias a tu medida:
-          vuelos, hoteles y aventuras sin complicaciones. Tú sueña el destino, nosotros nos encargamos del resto para
-          que solo disfrutes el camino.
-        </p>
-        <img src='../assets/imagenes-pagina/travel.png' alt='destino'>
-      </div>
-
-    </section>
-    <h1>Consulta nuestros viajes destacados:</h1>
+    <h1>Todos nuestros viajes disponibles:</h1>
     <section class=" grid">
       <?php
       // create connection
       include("../vistas/conexion_bd.php");
 
-      $sql = "SELECT * FROM viajes WHERE destacado = 1";
+      $sql = "SELECT * FROM viajes";
       $result = $conn->query($sql);
 
       if ($result->num_rows > 0) {

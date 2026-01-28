@@ -1,55 +1,30 @@
+<?php
+session_start();
+if (isset($_SESSION["user"]) && $_SESSION["user"]["admin"] == 1) {
+} else {
+  http_response_code(404);
+  exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
   <meta charset="UTF-8">
   <title>Agencia de Viajes</title>
-  <style>
-    table {
-      max-width: 1250px;
-      min-width: 900px;
-      margin: 10px auto;
-    }
+  <link rel="stylesheet" href="../assets/css/global.css">
+  <link rel="stylesheet" href="../assets/css/cabecera.css">
+  <link rel="stylesheet" href="../assets/css/base-datos.css">
+  <link rel="stylesheet" href="../assets/css/footer.css">
 
-    td {
-      padding-inline: 5px;
-      padding: 5px;
-    }
-
-    .anadir-button {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 10px;
-      display: flex;
-    }
-
-    .boton-accion {
-      display: inline-block;
-      padding: 10px 20px;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-    }
-
-    .boton-anadir {
-      object-fit: cover;
-      max-width: 50%;
-      display: block;
-      margin: 0 auto;
-      background-color: #147a25;
-      padding: 10px 20px;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-size: 20px;
-    }
-  </style>
 </head>
 
 <body>
 
-  <?php include("../vistas/cabezera.php"); ?>
+  <?php
+  include("../vistas/cabezera.php");
+  ?>
 
   <main style="padding: 20px;">
     <h1>Viajes</h1>
@@ -79,7 +54,7 @@
         if ($result->num_rows > 0) {
           // output data of each row
           while ($row = $result->fetch_assoc()) {
-            // html de un card
+            //html de un card
             ?>
             <tr>
               <?php

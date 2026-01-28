@@ -4,19 +4,22 @@
 <head>
   <meta charset="UTF-8">
   <title>Error 404</title>
+  <link rel="stylesheet" href="../assets/css/global.css">
+  <link rel="stylesheet" href="../assets/css/cabecera.css">
+  <link rel="stylesheet" href="../assets/css/footer.css">
 </head>
 
 <body>
 
+  <?php include("../vistas/cabezera.php"); ?>
 
-<?php include("../vistas/cabezera.php"); ?>
-
-<main style="padding: 20px;">
+  <main style="padding: 20px;">
     <h1>Error 404</h1>
     <p class="blue-color">¡No existe el viaje seleccionado!</p>
-</main>
+  </main>
 
-<?php include("../vistas/footer.php"); ?>
+  <?php include("../vistas/footer.php"); ?>
 
 </body>
+
 </html>

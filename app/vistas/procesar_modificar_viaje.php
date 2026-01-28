@@ -4,31 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Modificar viaje</title>
-
-    <style>
-        .card-texto {
-            width: 400px;
-            padding: 20px;
-            border: 2px solid #9e9e9e;
-            border-radius: 8px;
-            background-color: #f9f9f9;
-            margin: 20px auto;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .boton-volver {
-            background-color: #852623;
-            padding: 10px;
-            font-size: 16px;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            margin: 10px;
-            display: flex;
-            justify-content: center;
-        }
-    </style>
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/cabecera.css">
+    <link rel="stylesheet" href="../assets/css/procesar-card.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
 
 </head>
 

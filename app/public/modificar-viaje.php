@@ -26,59 +26,10 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <title>Modificar viaje</title>
-
-    <style>
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            width: 400px;
-            padding: 20px;
-            border: 2px solid #9e9e9e;
-            border-radius: 8px;
-            background-color: #f9f9f9;
-            margin: 10px auto;
-        }
-
-        .boton-modificar {
-            padding: 10px;
-            font-size: 16px;
-            cursor: pointer;
-            background-color: #246097;
-            color: white;
-            border: none;
-            border-radius: 5px;
-        }
-
-        .boton-volver {
-            background-color: #852623;
-            padding: 10px;
-            font-size: 16px;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            margin: 10px;
-            display: flex;
-            justify-content: center;
-        }
-
-        .destacado-texto {
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        .destacado-check {
-            transform: scale(1.5);
-            accent-color: #d4a017;
-            color: #000000;
-        }
-
-        .textinput {
-            height: 25px;
-            font-size: 16px;
-        }
-    </style>
-
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/cabecera.css">
+    <link rel="stylesheet" href="../assets/css/form-viaje.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
 </head>
 
 <body>
