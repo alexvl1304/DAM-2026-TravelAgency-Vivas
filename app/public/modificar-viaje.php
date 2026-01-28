@@ -47,7 +47,7 @@ $conn->close();
                         echo "checked"; ?>><br>
             </div>
             Titulo: <input class="textinput" type="text" name="titulo" value="<?php echo $viaje["titulo"] ?>"><br>
-            Precio: <input class="textinput" type="numeric" name="precio" value="<?php echo $viaje["precio"] ?>"><br>
+            Precio: <input class="textinput" type="number" name="precio" value="<?php echo $viaje["precio"] ?>"><br>
             Fecha inicio: <input class="textinput" type="date" name="fecha_inicio"
                 value="<?php echo $viaje["fecha_inicio"] ?>"><br>
             Fecha final: <input class="textinput" type="date" name="fecha_fin"

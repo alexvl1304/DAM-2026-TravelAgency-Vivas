@@ -8,6 +8,7 @@ form {
     border-radius: 8px;
     background-color: #f9f9f9;
     margin: 10px auto;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
 }
 
 .boton-anadir {
@@ -18,6 +19,7 @@ form {
     color: white;
     border: none;
     border-radius: 5px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
 }
 
 .boton-modificar {
@@ -28,6 +30,7 @@ form {
     color: white;
     border: none;
     border-radius: 5px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
 }
 
 .boton-volver {
@@ -40,6 +43,7 @@ form {
     margin: 10px;
     display: flex;
     justify-content: center;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
 }
 
 .textinput {

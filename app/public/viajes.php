@@ -62,11 +62,11 @@ if (isset($_SESSION["user"]) && $_SESSION["user"]["admin"] == 1) {
                 if ($key == "destacado") {
                   if ($value == 1) {
                     ?>
-                    <td style=" color: #d4a017">★</td>
+                    <td style=" color: #d4a017; font-weight: bold;">★</td>
                     <?php
                   } else {
                     ?>
-                    <td style="color: #852623">X</td>
+                    <td style="color: #852623; font-weight: bold;">X</td>
                     <?php
                   }
                 } else {

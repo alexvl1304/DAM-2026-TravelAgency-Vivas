@@ -8,6 +8,7 @@ form {
     border-radius: 8px;
     background-color: #f9f9f9;
     margin: 10px auto;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
 }
 
 .boton-anadir {
@@ -15,6 +16,7 @@ form {
     font-size: 16px;
     cursor: pointer;
     background-color: #246097;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
     color: white;
     border: none;
     border-radius: 5px;
@@ -31,6 +33,7 @@ form {
     justify-content: center;
     color: #02203a;
     font-weight: bold;
+    text-decoration: underline;
 }
 
 .textinput {

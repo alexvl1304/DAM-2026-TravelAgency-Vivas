@@ -32,7 +32,7 @@ if(!isset($_SESSION)){
         ?>
         <div style="flex: 1; justify-content: end;" class="user">
             <a style="display: flex;" href="../public/pagina-usuario.php">
-                <img style="max-height: 60px; flex: 1" src="../assets/imagenes-pagina/user.png" alt="">
+                <img style="max-height: 60px; flex: 1; margin-top: 2px; margin-bottom: 2px;" src="../assets/imagenes-pagina/user.png" alt="">
             </a>
         </div>
         <?php

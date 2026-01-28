@@ -23,6 +23,7 @@ td {
     color: white;
     text-decoration: none;
     border-radius: 8px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
 }
 
 .boton-anadir {
@@ -36,4 +37,5 @@ td {
     text-decoration: none;
     border-radius: 8px;
     font-size: 20px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
 }

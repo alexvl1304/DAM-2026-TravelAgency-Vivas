@@ -79,6 +79,11 @@
 
       ?>
     </section>
+
+    <h1>Más viajes:</h1>
+    <a style="text-decoration: underline" href="todos-viajes.php">
+      <p class="blue-color">Si quieres explorar más destinos, consulta todos nuestros viajes</p>
+    </a>
   </main>
 
   <?php include("../vistas/footer.php"); ?>

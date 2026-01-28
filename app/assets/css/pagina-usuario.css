@@ -12,7 +12,7 @@
     border: 2px solid #9e9e9e;
     border-radius: 8px;
     width: 420px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
 }
 
 .perfil-imagen {
@@ -61,4 +61,5 @@
     margin: 30px 10px 0px;
     display: flex;
     justify-content: center;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
 }
