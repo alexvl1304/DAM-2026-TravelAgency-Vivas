@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (isset($_SESSION["user"])) {
+} else {
+  http_response_code(404);
+  exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 

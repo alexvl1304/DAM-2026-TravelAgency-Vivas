@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (isset($_SESSION["user"]) && $_SESSION["user"]["admin"] == 1) {
+} else {
+  http_response_code(404);
+  exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

@@ -64,8 +64,16 @@ $conn->close();
                 </p>
 
                 <div class="detalle-grid">
-                    <div><strong>Fecha inicio:</strong> <?php echo $viaje["fecha_inicio"] ?></div>
-                    <div><strong>Fecha final:</strong> <?php echo $viaje["fecha_fin"] ?></div>
+                    <div><strong>Fecha inicio:</strong> <?php
+                    $fecha = $viaje["fecha_inicio"];
+                    $fechaObj = new DateTime($fecha);
+                    echo $fechaObj->format('d F Y'); // salida: 29 January 2026
+                    ?></div>
+                    <div><strong>Fecha final:</strong> <?php
+                    $fecha = $viaje["fecha_fin"];
+                    $fechaObj = new DateTime($fecha);
+                    echo $fechaObj->format('d F Y'); // salida: 29 January 2026
+                    ?></div>
                     <div><strong>Tipo:</strong> <?php echo $viaje["tipo"] ?></div>
                     <div><strong>Plazas:</strong> <?php echo $viaje["plazas"] ?> disponibles</div>
                 </div>

@@ -8,91 +8,8 @@
   <link rel="stylesheet" href="../assets/css/cabecera.css">
   <link rel="stylesheet" href="../assets/css/index.css">
   <link rel="stylesheet" href="../assets/css/footer.css">
+  <link rel="stylesheet" href="../assets/css/form-ordenar.css">
 </head>
-
-<style>
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-
-  .intro-div {
-    border: 2px solid #9e9e9e;
-    border-radius: 8px;
-    padding: 20px;
-    background: #f4f7ff;
-    object-fit: cover;
-    max-width: 700px;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .intro-section {
-    padding: 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .intro-div img {
-    object-fit: cover;
-    max-width: 50%;
-    display: block;
-    margin: 0 auto;
-  }
-
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 15px;
-    padding: 0px 100px;
-  }
-
-  .card {
-    border: 2px solid #9e9e9e;
-    border-radius: 8px;
-    background: #f4f7ff;
-    max-height: 350px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .card:hover {
-    background-color: #e0e5f1;
-  }
-
-  .card img {
-    width: 100%;
-    height: 175px;
-    object-fit: cover;
-    display: block;
-  }
-
-  .card-titulo {
-    margin: 15px 0px 5px;
-    color: #222222;
-    font-size: 25px;
-    font-weight: bold;
-    text-align: center;
-  }
-
-  .card-info {
-    flex: 1;
-    font-size: 18px;
-    color: #505050;
-    margin: 5px 0 10px;
-    margin-top: auto;
-  }
-
-  .card-precio {
-    flex: 1;
-    font-size: 25px;
-    color: #147a25;
-    margin: 5px 0 10px;
-    font-weight: bold;
-  }
-</style>
 
 <body>
   <header>
@@ -101,12 +18,74 @@
 
   <main style="padding: 20px;">
     <h1>Todos nuestros viajes disponibles:</h1>
+
+    <form class="ordenar-por" method="get" action="todos-viajes.php">
+      <select class="ordenar-por-select" name="por">
+        <option value="0">-- Ordenar por --</option>
+        <option value="6">Nombre</option>
+        <option value="1">Precio</option>
+        <option value="2">Fecha de salida</option>
+        <option value="3">Fecha de regreso</option>
+        <option value="4">Plazas</option>
+        <option value="5">Tipo</option>
+      </select>
+      <select class="ordenar-por-select" name="orden">
+        <option value="0">-- Orden --</option>
+        <option value="0">Ascendente</option>
+        <option value="1">Descendente</option>
+      </select>
+      <input class="ordenar-por-input" type="text" placeholder="nombre de viaje" name="nombre">
+      <button class="ordenar-por-boton" type="submit">Buscar</button>
+    </form>
+
     <section class=" grid">
       <?php
+
+      $sql = "SELECT * FROM viajes ";
+
+      if (isset($_GET['orden'])) {
+        switch ($_GET['orden']) {
+          case '0':
+            $orden = "ASC";
+            break;
+          case '1':
+            $orden = "DESC";
+            break;
+        }
+      } else {
+        $orden = "ASC";
+      }
+
+      if (isset($_GET['nombre'])) {
+        $sql = $sql . "WHERE titulo LIKE '%" . $_GET['nombre'] . "%' ";
+      }
+
+      if (isset($_GET['por'])) {
+        switch ($_GET['por']) {
+          case '1':
+            $sql = $sql . "ORDER BY precio " . $orden;
+            break;
+          case '2':
+            $sql = $sql . "ORDER BY fecha_inicio " . $orden;
+            break;
+          case '3':
+            $sql = $sql . "ORDER BY fecha_fin " . $orden;
+            break;
+          case '4':
+            $sql = $sql . "ORDER BY plazas " . $orden;
+            break;
+          case '5':
+            $sql = $sql . "ORDER BY tipo " . $orden;
+            break;
+          case '6':
+            $sql = $sql . "ORDER BY titulo " . $orden;
+            break;
+        }
+      }
+
       // create connection
       include("../vistas/conexion_bd.php");
 
-      $sql = "SELECT * FROM viajes";
       $result = $conn->query($sql);
 
       if ($result->num_rows > 0) {

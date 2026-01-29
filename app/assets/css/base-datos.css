@@ -2,6 +2,8 @@ table {
     max-width: 1250px;
     min-width: 900px;
     margin: 10px auto;
+    background-color: #f4f7ff;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
 }
 
 td {

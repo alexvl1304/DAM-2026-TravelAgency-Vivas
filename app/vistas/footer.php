@@ -1,15 +1,17 @@
 <footer style="background-color: #294b7e;">
-    <!--<nav class="barra">
-        <a class="pestana" href="../public/index.php">Home</a>
-        <a class="pestana" href="../public/viajes.php">Viajes</a>
-    </nav>-->
     <nav>
         <div style="font-weight: bold;">
+            <p>
+                +34 689 38 20 93
+            </p>
             <p>
                 contact@easypeasytravel.com
             </p>
             <p>
                 Easy Peasy Travel. Todos los derechos reservados.
+            </p>
+            <p>
+                <a style="text-decoration: underline;" href="../public/informacion-legal.php">Información legal</a>
             </p>
         </div>
     </nav>
